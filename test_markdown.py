@@ -24,7 +24,6 @@ class TestMarkdown(unittest.TestCase):
         """
         person1 = contributor_stats.ContributorStats(
             "user1",
-            False,
             "url",
             100,
             "commit url",
@@ -32,7 +31,6 @@ class TestMarkdown(unittest.TestCase):
         )
         person2 = contributor_stats.ContributorStats(
             "user2",
-            False,
             "url2",
             200,
             "commit url2",
@@ -90,7 +88,6 @@ class TestMarkdown(unittest.TestCase):
         """
         person1 = contributor_stats.ContributorStats(
             "user1",
-            False,
             "url",
             100,
             "commit url",
@@ -98,7 +95,6 @@ class TestMarkdown(unittest.TestCase):
         )
         person2 = contributor_stats.ContributorStats(
             "user2",
-            False,
             "url2",
             200,
             "commit url2",
@@ -156,7 +152,6 @@ class TestMarkdown(unittest.TestCase):
         """
         person1 = contributor_stats.ContributorStats(
             "user1",
-            False,
             "https://avatars.example.com/user1.png",
             100,
             "commit url",
@@ -164,7 +159,6 @@ class TestMarkdown(unittest.TestCase):
         )
         person2 = contributor_stats.ContributorStats(
             "user2",
-            False,
             "https://avatars.example.com/user2.png",
             200,
             "commit url2",
@@ -225,7 +219,6 @@ class TestMarkdown(unittest.TestCase):
         """
         person1 = contributor_stats.ContributorStats(
             "user1",
-            False,
             "url",
             100,
             "commit url",
@@ -233,7 +226,6 @@ class TestMarkdown(unittest.TestCase):
         )
         person2 = contributor_stats.ContributorStats(
             "user2",
-            False,
             "url2",
             200,
             "commit url2",
@@ -290,7 +282,6 @@ class TestMarkdown(unittest.TestCase):
         """
         person1 = contributor_stats.ContributorStats(
             "user1",
-            False,
             "url",
             100,
             "commit url",
@@ -298,7 +289,6 @@ class TestMarkdown(unittest.TestCase):
         )
         person2 = contributor_stats.ContributorStats(
             "user2",
-            False,
             "url2",
             200,
             "commit url2",
@@ -350,7 +340,6 @@ class TestMarkdown(unittest.TestCase):
         """
         person1 = contributor_stats.ContributorStats(
             "user1",
-            False,
             "url",
             100,
             "https://github.com/org1/repo1/commits?author=user1",
@@ -358,7 +347,6 @@ class TestMarkdown(unittest.TestCase):
         )
         person2 = contributor_stats.ContributorStats(
             "user2",
-            False,
             "url2",
             200,
             "https://github.com/org2/repo2/commits?author=user2, "
@@ -463,7 +451,6 @@ class TestMarkdown(unittest.TestCase):
         """
         person1 = contributor_stats.ContributorStats(
             "user1",
-            False,
             "url",
             100,
             "commit url",
@@ -471,7 +458,6 @@ class TestMarkdown(unittest.TestCase):
         )
         person2 = contributor_stats.ContributorStats(
             "user2",
-            False,
             "url2",
             200,
             "commit url2",
@@ -525,7 +511,6 @@ class TestMarkdown(unittest.TestCase):
         """
         person1 = contributor_stats.ContributorStats(
             "user1",
-            False,
             "url",
             100,
             "https://github.example.com/org1/repo1/commits?author=user1",

@@ -22,12 +22,25 @@ class TestContributorStats(unittest.TestCase):
         """
         self.contributor = ContributorStats(
             "zkoppert",
-            False,
             "https://avatars.githubusercontent.com/u/29484535?v=4",
             1261,
             "commit_url5",
             "",
         )
+
+    def test_init_new_contributor_true(self):
+        """
+        Test that new_contributor=True is preserved by __init__.
+        """
+        contributor = ContributorStats(
+            "new_user",
+            avatar_url="https://example.com/avatar.png",
+            contribution_count=1,
+            commit_url="commit_url_new",
+            sponsor_info="",
+            new_contributor=True,
+        )
+        self.assertTrue(contributor.new_contributor)
 
     def test_init(self):
         """
@@ -49,11 +62,11 @@ class TestContributorStats(unittest.TestCase):
         """Test the __repr__ method includes key fields."""
         expected = (
             "contributor_stats(username=zkoppert, "
-            "new_contributor=False, "
             "avatar_url=https://avatars.githubusercontent.com/u/29484535?v=4, "
             "contribution_count=1261, "
             "commit_url=commit_url5, "
-            "sponsor_info=)"
+            "sponsor_info=, "
+            "new_contributor=False)"
         )
         self.assertEqual(repr(self.contributor), expected)
 
@@ -63,7 +76,6 @@ class TestContributorStats(unittest.TestCase):
         """
         contributor1 = ContributorStats(
             "user1",
-            False,
             "https://avatars.githubusercontent.com/u/29484535?v=4",
             100,
             "commit_url1",
@@ -71,7 +83,6 @@ class TestContributorStats(unittest.TestCase):
         )
         contributor2 = ContributorStats(
             "user2",
-            False,
             "https://avatars.githubusercontent.com/u/29484535?v=4",
             200,
             "commit_url2",
@@ -79,7 +90,6 @@ class TestContributorStats(unittest.TestCase):
         )
         contributor3 = ContributorStats(
             "user1",
-            False,
             "https://avatars.githubusercontent.com/u/29484535?v=4",
             150,
             "commit_url3",
@@ -95,7 +105,6 @@ class TestContributorStats(unittest.TestCase):
         expected_result = [
             ContributorStats(
                 "user1",
-                False,
                 "https://avatars.githubusercontent.com/u/29484535?v=4",
                 250,
                 "commit_url1, commit_url3",
@@ -103,7 +112,6 @@ class TestContributorStats(unittest.TestCase):
             ),
             ContributorStats(
                 "user2",
-                False,
                 "https://avatars.githubusercontent.com/u/29484535?v=4",
                 200,
                 "commit_url2",
@@ -123,7 +131,6 @@ class TestContributorStats(unittest.TestCase):
         returning_contributors = [
             ContributorStats(
                 username="user1",
-                new_contributor=False,
                 avatar_url="https://avatars.githubusercontent.com/u/",
                 contribution_count=100,
                 commit_url="url1",
@@ -131,7 +138,6 @@ class TestContributorStats(unittest.TestCase):
             ),
             ContributorStats(
                 username="user2",
-                new_contributor=False,
                 avatar_url="https://avatars.githubusercontent.com/u/",
                 contribution_count=200,
                 commit_url="url2",
@@ -151,7 +157,6 @@ class TestContributorStats(unittest.TestCase):
         returning_contributors = [
             ContributorStats(
                 username="user1",
-                new_contributor=False,
                 avatar_url="https://avatars.githubusercontent.com/u/",
                 contribution_count=100,
                 commit_url="url1",
@@ -159,7 +164,6 @@ class TestContributorStats(unittest.TestCase):
             ),
             ContributorStats(
                 username="user2",
-                new_contributor=False,
                 avatar_url="https://avatars.githubusercontent.com/u/",
                 contribution_count=200,
                 commit_url="url2",
@@ -189,7 +193,6 @@ class TestContributorStats(unittest.TestCase):
         returning_contributors = [
             ContributorStats(
                 username=user,
-                new_contributor=False,
                 avatar_url="https://avatars.githubusercontent.com/u/",
                 contribution_count=100,
                 commit_url="url1",
@@ -237,7 +240,6 @@ class TestContributorStats(unittest.TestCase):
         contributors = [
             ContributorStats(
                 username="user1",
-                new_contributor=False,
                 avatar_url="https://avatars.githubusercontent.com/u/",
                 contribution_count=100,
                 commit_url="url1",

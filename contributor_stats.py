@@ -23,11 +23,11 @@ class ContributorStats:
 
     Attributes:
         username (str): The username of the contributor
-        new_contributor (bool): Whether the contributor is new or returning
         avatar_url (str): The url of the contributor's avatar
         contribution_count (int): The number of contributions the contributor has made
         commit_url (str): The url of the contributor's commits
         sponsor_info (str): The url of the contributor's sponsor page
+        new_contributor (bool): Whether the contributor is new or returning
 
     """
 
@@ -38,30 +38,29 @@ class ContributorStats:
     def __init__(
         self,
         username: str,
-        new_contributor: bool,
         avatar_url: str,
         contribution_count: int,
         commit_url: str,
         sponsor_info: str,
+        new_contributor: bool = False,
     ):
         """Initialize the contributor_stats object"""
-        new_contributor = False
         self.username = username
-        self.new_contributor = new_contributor
         self.avatar_url = avatar_url
         self.contribution_count = contribution_count
         self.commit_url = commit_url
         self.sponsor_info = sponsor_info
+        self.new_contributor = new_contributor
 
     def __repr__(self) -> str:
         """Return the representation of the contributor_stats object"""
         return (
             f"contributor_stats(username={self.username}, "
-            f"new_contributor={self.new_contributor}, "
             f"avatar_url={self.avatar_url}, "
             f"contribution_count={self.contribution_count}, "
             f"commit_url={self.commit_url}, "
-            f"sponsor_info={self.sponsor_info})"
+            f"sponsor_info={self.sponsor_info}, "
+            f"new_contributor={self.new_contributor})"
         )
 
     def __eq__(self, other) -> bool:

@@ -181,7 +181,6 @@ def get_contributors(repo: object, start_date: str, end_date: str, ghe: str):
                 commit_url = f"{endpoint}/{repo.full_name}/commits?author={username}&since={start_date}&until={end_date}"
                 contributor = contributor_stats.ContributorStats(
                     username,
-                    False,
                     data["avatar_url"],
                     data["contribution_count"],
                     commit_url,
@@ -195,7 +194,6 @@ def get_contributors(repo: object, start_date: str, end_date: str, ghe: str):
                 commit_url = f"{endpoint}/{repo.full_name}/commits?author={user.login}"
                 contributor = contributor_stats.ContributorStats(
                     user.login,
-                    False,
                     user.avatar_url,
                     user.contributions_count,
                     commit_url,

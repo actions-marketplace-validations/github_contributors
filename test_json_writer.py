@@ -38,7 +38,6 @@ class TestWriteToJson(unittest.TestCase):
         contributors = (
             ContributorStats(
                 username="test_user",
-                new_contributor=False,
                 avatar_url="https://test_url.com",
                 contribution_count=10,
                 commit_url="https://test_commit_url.com",

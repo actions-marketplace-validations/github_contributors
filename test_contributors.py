@@ -37,7 +37,6 @@ class TestContributors(unittest.TestCase):
         )
         mock_contributor_stats.assert_called_once_with(
             "user",
-            False,
             "https://avatars.githubusercontent.com/u/12345678?v=4",
             1,
             "https://github.com/owner/repo/commits?author=user&since=2022-01-01&until=2022-12-31",
@@ -57,7 +56,6 @@ class TestContributors(unittest.TestCase):
         mock_get_contributors.return_value = [
             ContributorStats(
                 "user",
-                False,
                 "https://avatars.githubusercontent.com/u/29484535?v=4",
                 100,
                 "commit_url",
@@ -75,7 +73,6 @@ class TestContributors(unittest.TestCase):
             [
                 ContributorStats(
                     "user",
-                    False,
                     "https://avatars.githubusercontent.com/u/29484535?v=4",
                     200,
                     "commit_url, commit_url",
@@ -96,7 +93,6 @@ class TestContributors(unittest.TestCase):
         mock_get_contributors.return_value = [
             ContributorStats(
                 "user",
-                False,
                 "https://avatars.githubusercontent.com/u/29484535?v=4",
                 100,
                 "commit_url2",
@@ -114,7 +110,6 @@ class TestContributors(unittest.TestCase):
             [
                 ContributorStats(
                     "user",
-                    False,
                     "https://avatars.githubusercontent.com/u/29484535?v=4",
                     100,
                     "commit_url2",
@@ -152,7 +147,6 @@ class TestContributors(unittest.TestCase):
         )
         mock_contributor_stats.assert_called_once_with(
             "user",
-            False,
             "https://avatars.githubusercontent.com/u/12345678?v=4",
             1,
             "https://github.com/owner/repo/commits?author=user&since=2022-01-01&until=2022-12-31",
@@ -203,7 +197,6 @@ class TestContributors(unittest.TestCase):
         mock_repo.commits.assert_not_called()
         mock_contributor_stats.assert_called_once_with(
             "user",
-            False,
             "https://avatars.githubusercontent.com/u/12345678?v=4",
             100,
             "https://github.com/owner/repo/commits?author=user",
@@ -338,7 +331,6 @@ class TestContributors(unittest.TestCase):
         """Test main sets new_contributor when start/end dates are provided."""
         contributor = ContributorStats(
             "user1",
-            False,
             "https://avatars.githubusercontent.com/u/1",
             10,
             "commit_url",
@@ -389,7 +381,6 @@ class TestContributors(unittest.TestCase):
         """Test main fetches sponsor information when sponsor_info is enabled."""
         contributor = ContributorStats(
             "user1",
-            False,
             "https://avatars.githubusercontent.com/u/1",
             10,
             "commit_url",
@@ -397,7 +388,6 @@ class TestContributors(unittest.TestCase):
         )
         sponsored_contributor = ContributorStats(
             "user1",
-            False,
             "https://avatars.githubusercontent.com/u/1",
             10,
             "commit_url",
