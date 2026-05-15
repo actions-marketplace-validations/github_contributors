@@ -6,7 +6,7 @@ requires-python = ">=3.11"
 dependencies = [
     "github3-py==4.0.1",
     "python-dotenv==1.2.2",
-    "requests==2.33.0",
+    "requests==2.33.1",
 ]
 
 [dependency-groups]
@@ -16,7 +16,7 @@ dev = [
     "mypy==1.19.1",
     "mypy-extensions==1.1.0",
     "pylint==4.0.5",
-    "pytest==9.0.2",
-    "pytest-cov==7.0.0",
-    "types-requests==2.32.4.20260107",
+    "pytest==9.0.3",
+    "pytest-cov==7.1.0",
+    "types-requests==2.33.0.20260508",
 ]
